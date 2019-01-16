@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    height: 1080px;
+    background: url(../images/backgrouds/bg_001.png);
+}
+
+a {
+    color: #000;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    min-height: 80px;
+    background: #fff;
+    border-bottom: 1px solid #e7e7e7;
+    box-sizing: border-box;
+}
+
+.index-head {
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.index-logo-area {
+    float: left;
+    width: 220px;
+    height: 80px;
+}
+
+.index-logo-area>a {
+    width: 220px;
+    height: 70px;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.index-logo {
+    width: 220px;
+    height: 70px;
+    display: inline-block;
+}
+
+.index-nav-area {
+    float: right;
+    height: 80px;
+}
+
+.index-nav-items {
+    height: 60px;
+    line-height: 60px;
+    margin-top: 20px;
+}
+
+.index-nav-item {
+    float: left;
+    height: 60px;
+    background: url(../images/navs/index-nav-li.png) no-repeat right 50%;
+    padding: 0 30px;
+    cursor: pointer;
+}
+
+.index-nav-item>a {
+    width: 100%;
+    height: 60px;
+    display: inline-block;
+}
+
+.index-nav-item:hover>a {
+    color: green;
+}
+
+.navMore {
+    position: relative;
+}
+
+.index-nav-more {
+    position: relative;
+}
+
+.index-nav-items-more {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    display: none;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+
+.index-nav-items-more::before {
+    border-bottom: 6px solid #ccc;
+}
+
+.index-nav-items-more::after {
+    border-bottom: 6px solid #fff;
+    margin-top: 1px;
+}
+
+.index-nav-items-more::after,
+.index-nav-items-more::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    margin-left: -6px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+
+.index-nav-items-more-hide {
+    display: none;
+}
+
+.index-nav-items-more-show {
+    display: block;
+}
+
+.index-nav-item-more {
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.index-nav-item-more:hover {
+    background: #f5f5f5;
+    color: #fff;
+    cursor: pointer;
+}
+
+.navMoreSquare {
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    border: .5px solid #e7e7e7;
+    transform: rotate(45deg);
+}
