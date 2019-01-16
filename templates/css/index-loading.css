@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #1a1a17;
+}
+
+canvas {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#testGetEditorContent {
+    display: none;
+    margin: 20px auto;
+}
+
+#testShowEditorContent {
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 1px solid #1a1a17;
+    box-sizing: border-box;
+}

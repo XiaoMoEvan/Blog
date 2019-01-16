@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>富文本插件editor</title>
+    <link rel="stylesheet" href="../lib/editor/css/editormd.min.css">
+    <style>
+        #testGetEditorContent {
+            display: none;
+            margin: 20px auto;
+        }
+        
+        #testShowEditorContent {
+            height: auto;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 1px solid #1a1a17;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 初始化编辑器 -->
+    <div id="editormd">
+        <textarea style="display:none;">### Hello Editor.md !</textarea>
+    </div>
+
+    <!-- 测试获取editor内容 -->
+    <button type="button" id="testGetEditorContent">获取Editor内容</button>
+
+    <!-- 显示获取到的内容 -->
+    <div id="testShowEditorContent"></div>
+
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/editor/editormd.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var editor;
+            initEditor();
+        }
+
+        var getWindow = {
+            width: $(window).width(),
+            height: $(window).height()
+        }
+
+        var initEditor = function() {
+            // 初始化编辑器
+            editor = editormd("editormd", {
+                width: "90%",
+                height: getWindow.height - 100,
+                theme: "dark",
+                // previewTheme: "dark",
+                editorTheme: "pastel-on-dark",
+                codeFold: true,
+                saveHTMLToTextarea: true,
+                path: "lib/editor/lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+            });
+
+            /*
+            // or
+            var editor = editormd({
+                id   : "editormd",
+                path : "../lib/"
+            });
+            */
+        }
+        $("#testGetEditorContent").click(function() {
+            //获取编辑器内容
+            //  var blogcontent = encodeURIComponent(editor.getMarkdown());
+            var blogcontent = editor.getMarkdown();
+            //获取编辑器内容
+            // var blogcontent = editor.getHTML();
+
+            var showEditorContent = editormd.markdownToHTML("testShowEditorContent", {
+                markdown: blogcontent,
+                htmlDecode: "style,script,iframe", // you can filter tags decode
+                emoji: true,
+                taskList: true,
+                tex: true, // 默认不解析
+                // flowChart: true, // 默认不解析
+                // sequenceDiagram: true, // 默认不解析
+            });
+            $("#testShowEditorContent").width(getWindow.width - 60);
+            // document.getElementById("testShowEditorContent").style.width = getWindow.width;
+            // console.log(blogcontent);
+            // alert(blogcontent);
+        })
+    </script>
+</body>
+
+</html>
