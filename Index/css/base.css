@@ -9,3 +9,8 @@
     border-radius: 50%;
     box-sizing: border-box;
 }
+
+.testBackGroundColor {
+    /* 浅灰色，用于布局时候做背景颜色 */
+    background: #e7e7e7;
+}

@@ -234,14 +234,16 @@
         float: left;
         width: 1000px;
         height: 1000px;
-        background: #e7e7e7;
+        background: #fff;
+        /* background: #e7e7e7; */
     }
     
     .index-content-right {
         float: right;
         width: 350px;
         height: 800px;
-        background: #e7e7e7;
+        background: #fff;
+        /* background: #e7e7e7; */
     }
     
     .index-friendLinks {
