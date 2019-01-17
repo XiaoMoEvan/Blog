@@ -5,12 +5,12 @@ function gotoTop(min_height) {
     _$header = $("header");
     _$section = $("section");
     //预定义返回顶部的html代码，它的css样式默认为不显示
-    var gotoTop_html = '<img id="gotoTop" src="images/back_top.png"/>';
-    //将返回顶部的html代码插入页面上id为page的元素的末尾 
+    var gotoTop_html = '<img id="gotoTop" src="images/back_top.png" title="返回顶部"/>';
+    //将返回顶部的html代码插入页面上 
     $("body").append(gotoTop_html);
     $("#gotoTop").click( //定义返回顶部点击向上滚动的动画
         function() {
-            $('html,body').animate({ scrollTop: 0 }, 700);
+            $('html,body').animate({ scrollTop: 0 }, 500);
         });
     //获取页面的最小高度，无传入值则默认为600像素
     min_height ? min_height = min_height : min_height = 100;
@@ -25,7 +25,7 @@ function gotoTop(min_height) {
             $("#gotoTop").fadeOut(200);
         };
         navToggle(s, 0);
-
+        // console.info(s);
     });
 };
 
@@ -33,7 +33,7 @@ function gotoTop(min_height) {
 //顺便给导航栏加特效
 function navToggle(s, type) {
 
-    if (s > showOrHideNav) {
+    if (s > showOrHideNav) { //1.收起
         if (type === 1) {
             _$header.addClass("navOverflowHidden");
             _$header.stop().animate({
@@ -42,14 +42,17 @@ function navToggle(s, type) {
             }, 500);
             _$header.css();
         } else {
-            _$header.stop().animate({
-                top: "-81px",
-            }, 500);
-            _$section.stop().animate({
-                "margin-top": "0px"
-            }, 500);
+            if (s >= 100) {
+                _$header.stop().animate({
+                    top: "-81px",
+                }, 300);
+                // _$section.stop().animate({
+                //      "margin-top": "0px"
+                // }, 500);
+            }
         }
-    } else if (s < showOrHideNav) {
+        // console.info("执行了1.收起");
+    } else { //2.展开
         if (type === 1) {
             _$header.stop().animate({
                 height: "80px",
@@ -61,31 +64,18 @@ function navToggle(s, type) {
         } else {
             _$header.stop().animate({
                 top: "0px"
-            }, 500);
-            _$section.stop().animate({
-                "margin-top": "100px"
-            }, 500);
-        }
-    } else {
-        if (type === 1) {
-            _$header.stop().animate({
-                height: "80px",
-                top: "0px"
-            }, 500);
-            setTimeout(function() {
-                _$header.removeClass("navOverflowHidden");
             }, 300);
-        } else {
-            _$header.stop().animate({
-                top: "0px"
-            }, 500);
-            _$section.stop().animate({
-                "margin-top": "100px"
-            }, 500);
+            // _$section.stop().animate({
+            //      "margin-top": "100px"
+            // }, 500);
         }
+        // console.info("执行了2.展开");
     }
-    showOrHideNav = s;
 
+    // console.info("showOrHideNav1:" + showOrHideNav);
+    // console.info(s);
+    showOrHideNav = s;
+    // console.info("showOrHideNav2:" + showOrHideNav);
 }
 
 gotoTop();

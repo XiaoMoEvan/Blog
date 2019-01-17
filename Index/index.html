@@ -8,9 +8,12 @@
     <title>博客首页--静态文件</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="../lib/layui/css/layui.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="lib/live2d/css/live2d.css">
     <link rel="stylesheet" href="css/backTop.css">
+    <link rel="stylesheet" href="../lib/plugs/countDown_2/css/timecountdown.css">
+    <!-- <link rel="stylesheet" href="../lib/plugs/countDown/css/countDown.css"> -->
 </head>
 
 <body>
@@ -30,7 +33,10 @@
                     <li class="index-nav-item"><a href="javascript:" title="友情链接">友情链接</a></li>
                     <li class="index-nav-item"><a href="javascript:" title="关于本站">关于本站</a></li>
                     <li class="index-nav-item navMore">
-                        <a href="javascript:" title="更多" class="index-nav-more">更多功能</a>
+                        <a href="javascript:" title="更多">更多功能</a>
+                        <span class="index-nav-more">
+                            <i class="index-nav-more-icon layui-icon layui-icon-up"></i>
+                        </span>
                         <ul class="index-nav-items-more index-nav-items-more-hide">
                             <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航1</a></li>
                             <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航2</a></li>
@@ -39,39 +45,70 @@
                         </ul>
                     </li>
                 </ul>
+                <ul class="index-nav-user">
+                    <!-- 未登录状态下显示 -->
+                    <li class="index-nav-user-info">
+                        <a href="javascript:" title="用户"><i class="layui-icon layui-icon-username"></i></a>
+                    </li>
+                    <li class="index-nav-user-search">
+                        <a href="javascript:" title="搜索"><i class="layui-icon layui-icon-search"></i></a>
+                    </li>
+
+                    <!-- 已经登录状态下显示 -->
+
+                </ul>
+
             </nav>
         </div>
     </header>
 
-
-
     <section>
+        <div class="index-count-down fillet">
+            <div class="index-count-down-content">
+                <span>项目从2019年1月15日至今已经过去</span>
+                <div>
+                    <span class="red"><p id="y2"></p><p>年</p></span>
+                    <span class="yg"><p id="d2"></p><p>天</p></span>
+                    <span class="or"><p id="h2"></p><p>时</p></span>
+                    <span class="pi"><p id="i2"></p><p>分</p></span>
+                    <span class="pk"><p id="s2"></p><p>秒</p></span>
+                </div>
+            </div>
+        </div>
+
         <!-- 这是主内 -->
         <div class="index-content">
-            <div class="index-content-left">
+            <div class="index-content-left fillet">
 
             </div>
-            <div class="index-content-right">
+            <div class="index-content-right fillet">
 
             </div>
         </div>
-        <div class="index-friendLinks">
+        <div class="index-friendLinks fillet">
             <h4>友情链接：</h4>
-            <ul>
-                <li>
+            <ul class="index-friendLinks-content">
+                <!-- 通过js生成并且添加 -->
+                <!-- <li>
                     <a href="javascript:" title="友情链接">
-                        <img class="friendLinksAvatar" src="images/friendLinks/link_0001.gif" alt="">
-                        <span>小莫云联盟</span>
+                        <img class="friendLinksAvatar circle" src="images/friendLinks/link_0001.gif" alt="">
+                        <span>奇创云盟</span>
                     </a>
                 </li>
+                <li>
+                    <a href="javascript:" title="友情链接">
+                        <img class="friendLinksAvatar circle" src="images/friendLinks/link_0002.jpg" alt="">
+                        <span>提拉米苏的呆猫微博</span>
+                    </a>
+                </li> -->
             </ul>
         </div>
 
     </section>
 
 
-
-    <footer>
+    <!-- 后期将把底部抽离 使用局部加载的方式动态加载 -->
+    <footer id="footer">
         <!-- 这是底部 -->
         <div class="foot">
             <p>Copyright©2019提拉米苏的呆猫 All Right Reserved. Power By 大大二颜 桂ICP备17000465号-1</p>
@@ -116,8 +153,12 @@
 
     <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="../lib/layui/layui.all.js"></script>
+    <script src="../lib/plugs/countDown_2/js/timecountdown.js"></script>
     <script src="js/index.js"></script>
     <script src="js/backTop.js"></script>
+
+
+    <!-- 看板娘参数设置 -->
     <script>
         var resource_path = "Blog/Index/"; //也是资源目录 针对于model的资源目录
         var message_Path = 'lib/live2d/'; //资源目录，如果目录不对请更改
@@ -126,6 +167,19 @@
     </script>
     <script type="text/javascript" src="lib/live2d/js/live2d.js"></script>
     <script type="text/javascript" src="lib/live2d/js/message.js"></script>
+
+    <!-- 倒计时插件 -->
+    <script>
+        window.onload = function() {
+            xcsoft.countup('2019-01-15', function(time) {
+                document.getElementById("y2").innerHTML = time.year
+                document.getElementById("d2").innerHTML = time.day
+                document.getElementById("h2").innerHTML = time.hourZero
+                document.getElementById("i2").innerHTML = time.minuteZero
+                document.getElementById("s2").innerHTML = time.secondZero
+            })
+        }
+    </script>
 
 </body>
 

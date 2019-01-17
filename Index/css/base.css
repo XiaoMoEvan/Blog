@@ -1,0 +1,11 @@
+.fillet {
+    /* 圆角样式s适用于大型的矩形 */
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.circle {
+    /* 完全的圆形样式 */
+    border-radius: 50%;
+    box-sizing: border-box;
+}

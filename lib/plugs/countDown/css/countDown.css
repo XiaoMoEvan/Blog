@@ -1,0 +1,85 @@
+@charset "utf-8";
+ul#lsn {
+    list-style: none;
+}
+
+ul#lsn li {
+    margin: 0 auto;
+}
+
+ul#lsninline {
+    list-style: none;
+    float: left;
+}
+
+#ucimage {
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    width: 771px;
+    height: 87px;
+}
+
+#uctext {
+    /* position: absolute;
+    left: 0px;
+    top: 100px; */
+    width: 771px;
+    height: 43px;
+}
+
+#uccounter {
+    position: relative;
+    /* position: absolute;
+    left: 0px;
+    top: 150px; */
+    width: 771px;
+    height: 190px;
+}
+
+.countdown_section {
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: normal;
+    color: #666666;
+    font-size: 12px;
+    width: 144px;
+    padding-top: 10px;
+    line-height: inherit;
+}
+
+.countdown_amount {
+    font-size: 90px;
+    color: #ffffff;
+    line-height: 109px;
+}
+
+#overlay {
+    position: absolute;
+    left: 0px;
+    top: 74px;
+    width: 720px;
+    height: 148px;
+    background-image: url('../images/flipoverlay.png');
+    background-repeat: repeat-x;
+}
+
+#overlay_2 {
+    position: absolute;
+    top: 190px;
+    width: 720px;
+    height: 150px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+#defaultCountdown {
+    /* position: absolute;
+    left: 25px;
+    top: 0px; */
+    width: 720px;
+    height: 148px;
+    background-image: url('../images/flipbg.png');
+    background-repeat: repeat-x;
+}
