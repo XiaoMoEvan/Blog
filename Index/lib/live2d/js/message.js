@@ -427,6 +427,19 @@ if (!norunFlag) {
                     var ent = getEvent();
                     var x = moveLeft + ent.clientX - moveX;
                     var y = moveBottom + (moveY - ent.clientY);
+                    if (x <= 0) {
+                        x = x <= 0 ? 0 : x;
+                    } else {
+                        x = x >= $(window).width() - 250 ? $(window).width() - 250 : x;
+                    }
+                    if (y <= 0) {
+                        y = y <= 0 ? 0 : y;
+                    } else {
+                        y = y >= $(window).height() - 280 ? $(window).height() - 280 : y;
+                    }
+
+                    console.info("x=" + x);
+                    console.info("y=" + y);
                     obj.style.left = x + "px";
                     obj.style.bottom = y + "px";
                 }
