@@ -1,0 +1,10 @@
+/*默认样式，主要是position:fixed实现屏幕绝对定位*/
+
+#gotoTop {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100px;
+    cursor: pointer;
+}

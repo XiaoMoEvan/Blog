@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>博客首页--静态文件</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="lib/live2d/css/live2d.css">
+    <link rel="stylesheet" href="css/backTop.css">
 </head>
 
 <body>
@@ -27,7 +29,6 @@
                     <li class="index-nav-item"><a href="javascript:" title="关于本站">关于本站</a></li>
                     <li class="index-nav-item navMore">
                         <a href="javascript:" title="更多" class="index-nav-more">更多功能</a>
-                        <!-- <span class="navMoreSquare"></span> -->
                         <ul class="index-nav-items-more index-nav-items-more-hide">
                             <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航1</a></li>
                             <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航2</a></li>
@@ -40,18 +41,89 @@
         </div>
     </header>
 
+
+
     <section>
         <!-- 这是主内 -->
+        <div class="index-content">
+            <div class="index-content-left">
+
+            </div>
+            <div class="index-content-right">
+
+            </div>
+        </div>
+        <div class="index-friendLinks">
+            <h4>友情链接：</h4>
+            <ul>
+                <li>
+                    <a href="javascript:" title="友情链接">
+                        <img class="friendLinksAvatar" src="images/friendLinks/link_0001.gif" alt="">
+                        <span>小莫云联盟</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
     </section>
 
+
+
     <footer>
         <!-- 这是底部 -->
-
+        <div class="foot">
+            <p>Copyright©2019提拉米苏的呆猫 All Right Reserved. Power By 大大二颜 桂ICP备17000465号-1</p>
+            <p>网站已勉强运行：0天 0小时 0分钟 0秒</p>
+            <p><a href="javascript:" title="">www.925i.cn</a></p>
+        </div>
     </footer>
+
+
+    <!-- 背景图片 -->
+    <img class="index-bg" src="images/backgrouds/bg_001.png">
+
+    <!-- 看板娘 -->
+    <div id="landlord" style="left:5px;bottom:0px;">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+        <div class="live_talk_input_body">
+            <div class="live_talk_input_name_body">
+                <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+            </div>
+            <div class="live_talk_input_text_body">
+                <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？" />
+                <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+            </div>
+        </div>
+        <input name="live_talk" id="live_talk" value="1" type="hidden" />
+        <div class="live_ico_box">
+            <div class="live_ico_item type_info" id="showInfoBtn"></div>
+            <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+            <div class="live_ico_item type_music" id="musicButton"></div>
+            <!-- <div class="live_ico_item type_youdu" id="youduButton"></div> -->
+            <div class="live_ico_item type_quit" id="hideButton"></div>
+            <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+            <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+            <input name="live2dBGM" value="https://t1.aixinxi.net/o_1c52p4qbp15idv6bl55h381moha.mp3" type="hidden">
+            <input name="live2dBGM" value="https://t1.aixinxi.net/o_1c52p8frrlmf1aled1e14m56una.mp3" type="hidden">
+            <input id="duType" value="douqilai,l2d_caihong" type="hidden">
+        </div>
+    </div>
+    <div id="open_live2d">召唤伊斯特瓦尔</div>
+
 
     <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/backTop.js"></script>
+    <script>
+        var resource_path = "Blog/Index/"; //也是资源目录 针对于model的资源目录
+        var message_Path = 'lib/live2d/'; //资源目录，如果目录不对请更改
+        var talkAPI = "http://openapi.tuling123.com/openapi/api/v2"; //如果有类似图灵机器人的聊天接口请填写接口路径
+        var talkAPIKey = "24748500d10741c5966ba05ee51d239c"; //对应的ApiKey
+    </script>
+    <script type="text/javascript" src="lib/live2d/js/live2d.js"></script>
+    <script type="text/javascript" src="lib/live2d/js/message.js"></script>
+
 </body>
 
 </html>
