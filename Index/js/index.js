@@ -7,12 +7,9 @@ $(".index-nav-more").click(function() {
     _$moreThis = $(this);
     let _$thisParent = _$moreThis.parent();
     let _$navItemMore = _$thisParent.find(".index-nav-items-more");
-    let _hasClass = _$navItemMore.hasClass("index-nav-items-more-hide");
-    if (_hasClass) {
-        _$navItemMore.removeClass("index-nav-items-more-hide").addClass("index-nav-items-more-show");
-        _$moreThis.css({
-            "transform": "rotate(180deg)"
-        });
+    let _isShow = _$navItemMore.hasClass("index-nav-items-more-show");
+    if (!_isShow) {
+        navItemMoreShowOrHide(_$moreThis, _$navItemMore, "show");
         //设置二级导航的宽度
         _$thisParent.find(".index-nav-items-more").css({
             "min-width": _$thisParent.width() + 60
@@ -20,20 +17,33 @@ $(".index-nav-more").click(function() {
         bindCancelItemsMoreShow();
 
     } else {
-        _$navItemMore.removeClass("index-nav-items-more-show").addClass("index-nav-items-more-hide");
-        _$moreThis.css({
-            "transform": "rotate(0deg)"
-        });
+        navItemMoreShowOrHide(_$moreThis, _$navItemMore, "hide");
     }
 })
 
 var bindCancelItemsMoreShow = function() {
     $(".index-nav-items-more-show").off("mouseleave").on("mouseleave", function() {
-        $(this).removeClass("index-nav-items-more-show").addClass("index-nav-items-more-hide");
-        _$moreThis.css({
+        navItemMoreShowOrHide(_$moreThis, $(this), "hide");
+    })
+}
+
+/**控制首页导航下 二级子菜单的显示与隐藏，parentEle：具体的某个更多按钮或者全局，ele：具体子菜单导航，或者全局 type：是类型显示（show）或者隐藏（hide） */
+var navItemMoreShowOrHide = function(parentEle, thisEle, type) {
+    let _navMoreBtn = $(parentEle);
+    let _navItemMore = $(thisEle);
+    if (type === "show") {
+        _navMoreBtn.css({
+            "transform": "rotate(180deg)"
+        });
+        _navItemMore.stop().fadeIn();
+        _navItemMore.addClass("index-nav-items-more-show");
+    } else {
+        _navMoreBtn.css({
             "transform": "rotate(0deg)"
         });
-    })
+        _navItemMore.stop().fadeOut();
+        _navItemMore.removeClass("index-nav-items-more-show");
+    }
 }
 
 let loginAndRegisterHtml = "<p>这里将会调用登录注册表单页面</p>";

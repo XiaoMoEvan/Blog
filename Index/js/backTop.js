@@ -32,7 +32,8 @@ function gotoTop(min_height) {
 
 //顺便给导航栏加特效
 function navToggle(s, type) {
-
+    let _navMore = $(".index-nav-more");
+    let _$navItemMore = $(".index-nav-items-more");
     if (s > showOrHideNav) { //1.收起
         if (type === 1) {
             _$header.addClass("navOverflowHidden");
@@ -40,15 +41,12 @@ function navToggle(s, type) {
                 height: "0px",
                 top: "-1px"
             }, 500);
-            _$header.css();
         } else {
             if (s >= 100) {
                 _$header.stop().animate({
                     top: "-81px",
                 }, 300);
-                // _$section.stop().animate({
-                //      "margin-top": "0px"
-                // }, 500);
+                navItemMoreShowOrHide(_navMore, _$navItemMore, "hide");
             }
         }
         // console.info("执行了1.收起");
@@ -65,9 +63,7 @@ function navToggle(s, type) {
             _$header.stop().animate({
                 top: "0px"
             }, 300);
-            // _$section.stop().animate({
-            //      "margin-top": "100px"
-            // }, 500);
+            // navItemMoreShowOrHide(_$navItemMore, "hide");
         }
         // console.info("执行了2.展开");
     }

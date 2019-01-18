@@ -1,3 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    cursor: url(../images/cursors/cursor_001.cur), auto!important;
+    /* height: 1080px; */
+    /* background: url(../images/backgrouds/bg_001.png); */
+}
+
+a {
+    color: #000;
+    /* cursor: url(../images/cursors/cursor_001.cur), auto!important; */
+}
+
 .fillet {
     /* 圆角样式s适用于大型的矩形 */
     border-radius: 2px;

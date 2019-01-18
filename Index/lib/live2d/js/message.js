@@ -2,9 +2,9 @@
 // var home_Path = document.location.protocol + '//' + window.document.location.hostname + '/'; 
 //本地测试 未绑定域名 需要端口号
 var home_Path = document.location.protocol + '//' + window.document.location.hostname + ":" + window.document.location.port + '/';
-console.log("home_Path:" + home_Path);
+// console.log("home_Path:" + home_Path);
 var userAgent = window.navigator.userAgent.toLowerCase();
-console.log(userAgent);
+// console.log(userAgent);
 var norunAI = ["android", "iphone", "ipod", "ipad", "windows phone", "mqqbrowser", "msie", "trident/7.0"];
 var norunFlag = false;
 
@@ -438,8 +438,8 @@ if (!norunFlag) {
                         y = y >= $(window).height() - 280 ? $(window).height() - 280 : y;
                     }
 
-                    console.info("x=" + x);
-                    console.info("y=" + y);
+                    // console.info("x=" + x);
+                    // console.info("y=" + y);
                     obj.style.left = x + "px";
                     obj.style.bottom = y + "px";
                 }
