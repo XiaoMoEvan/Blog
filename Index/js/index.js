@@ -75,35 +75,20 @@ var getIndexFriendLinks = function() {
     //     }
     // })
 
-
-    let _temp =
-        '<li>' +
-        ' <a href="javascript:" title="友情链接">' +
-        '    <img class="friendLinksAvatar circle" src="images/friendLinks/link_0001.gif" alt="">' +
-        '    <span>奇创云盟</span>' +
-        '   </a>' +
-        '</li>' +
-        '<li>' +
-        ' <a href="javascript:" title="友情链接">' +
-        '    <img class="friendLinksAvatar circle" src="images/friendLinks/link_0002.jpg" alt="">' +
-        '    <span>提拉米苏的呆猫</span>' +
-        ' </a>' +
-        '</li>';
-    let _indexFriendLinksTemplate = _temp;
-    for (let i = 7; i > 0; i--) {
-        _indexFriendLinksTemplate += '<li>' +
+    for (let i = 1; i <= 20; i++) {
+        $(".index-friendLinks-content").append('<li>' +
             ' <a href="javascript:" title="友情链接">' +
-            '    <img class="friendLinksAvatar circle" src="images/friendLinks/link_0001.gif" alt="">' +
-            '    <span>奇创云盟' + i + '</span>' +
+            '    <img class="friendLinksAvatar circle" src="images/friendLinks/userAvatar_' + fillZero(i) + '.jpeg" alt="">' +
+            '    <span>友情链接（' + i + '）</span>' +
             '   </a>' +
-            '</li>' +
-            '<li>' +
-            ' <a href="javascript:" title="友情链接">' +
-            '    <img class="friendLinksAvatar circle" src="images/friendLinks/link_0002.jpg" alt="">' +
-            '    <span>提拉米苏的呆猫' + i + '</span>' +
-            ' </a>' +
-            '</li>';;
+            '</li>');
     }
-    $(".index-friendLinks-content").html(_indexFriendLinksTemplate);
+    // $(".index-friendLinks-content").html(_indexFriendLinksTemplate);
 }
+
+/**数字位数不足两位补0 */
+var fillZero = (num) => {
+    return num < 10 ? "0" + num : num;
+}
+
 getIndexFriendLinks();

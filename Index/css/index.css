@@ -223,7 +223,7 @@ section {
 
 .index-content-right {
     float: right;
-    width: 350px;
+    width: 380px;
     height: 800px;
     background: #fff;
     /* background: #e7e7e7; */
@@ -277,4 +277,8 @@ footer {
     width: 1400px;
     margin: 0 auto;
     text-align: center;
+}
+
+.foot p {
+    margin-bottom: 10px;
 }
