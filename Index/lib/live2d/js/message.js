@@ -435,7 +435,7 @@ if (!norunFlag) {
                     if (y <= 0) {
                         y = y <= 0 ? 0 : y;
                     } else {
-                        y = y >= $(window).height() - 280 ? $(window).height() - 280 : y;
+                        y = y >= $(window).height() - 280 - 80 ? $(window).height() - 280 - 80 : y;
                     }
 
                     // console.info("x=" + x);

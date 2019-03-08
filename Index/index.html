@@ -17,79 +17,98 @@
 </head>
 
 <body>
-    <header>
-        <div class="index-head">
-            <div class="index-logo-area">
-                <a href="javascript:" title="博客">
-                    <!-- <img class="index-logo" src="images/index-logo.png" alt="站点LOGO"> -->
-                    <img class="index-logo" src="images/test/logo_002.png" alt="站点LOGO">
-                </a>
-            </div>
-            <nav class="index-nav-area">
-                <ul class="index-nav-items">
-                    <li class="index-nav-item"><a href="javascript:" title="首页">首页</a></li>
-                    <li class="index-nav-item"><a href="javascript:" title="个人点滴">个人点滴</a></li>
-                    <li class="index-nav-item"><a href="javascript:" title="个人简历">个人简历</a></li>
-                    <li class="index-nav-item"><a href="javascript:" title="友情链接">友情链接</a></li>
-                    <li class="index-nav-item"><a href="javascript:" title="关于本站">关于本站</a></li>
-                    <li class="index-nav-item navMore">
-                        <a href="javascript:" title="更多">更多功能</a>
-                        <span class="index-nav-more">
+    <div id="alliance-app">
+        <header>
+            <div class="index-head">
+                <div class="index-logo-area">
+                    <a href="javascript:" title="博客">
+                        <!-- <img class="index-logo" src="images/index-logo.png" alt="站点LOGO"> -->
+                        <img class="index-logo" src="images/test/logo_002.png" alt="站点LOGO">
+                    </a>
+                </div>
+                <nav class="index-nav-area" id="index-nav-area">
+                    <ul class="index-nav-items">
+                        <li class="index-nav-item">
+                            <router-link to="/" title="首页">首页</router-link>
+                            <!-- <a href="javascript:" title="首页">首页</a> -->
+                        </li>
+                        <li class="index-nav-item">
+                            <router-link to="/personalDrip" title="个人点滴">个人点滴</router-link>
+                            <!-- <a href="javascript:" title="个人点滴">个人点滴</a> -->
+                        </li>
+                        <li class="index-nav-item">
+                            <router-link to="/curriculumVitae" title="个人简历">个人简历</router-link>
+                            <!-- <a href="javascript:" title="个人简历">个人简历</a> -->
+                        </li>
+                        <li class="index-nav-item">
+                            <router-link to="/friendshipLink" title="友情链接">友情链接</router-link>
+                            <!-- <a href="javascript:" title="友情链接">友情链接</a> -->
+                        </li>
+                        <li class="index-nav-item">
+                            <router-link to="/about" title="关于本站">关于本站</router-link>
+                            <!-- <a href="javascript:" title="关于本站">关于本站</a> -->
+                        </li>
+                        <li class="index-nav-item navMore">
+                            <a href="javascript:" title="更多">更多功能</a>
+                            <span class="index-nav-more">
                             <i class="index-nav-more-icon layui-icon layui-icon-up"></i>
                         </span>
-                        <ul class="index-nav-items-more index-nav-items-more-hide">
-                            <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航1</a></li>
-                            <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航2</a></li>
-                            <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航3</a></li>
-                            <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航4</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="index-nav-user">
-                    <!-- 未登录状态下显示 -->
-                    <li class="index-nav-user-info">
-                        <a href="javascript:" title="用户"><i class="layui-icon layui-icon-username"></i></a>
-                    </li>
-                    <li class="index-nav-user-search">
-                        <a href="javascript:" title="搜索"><i class="layui-icon layui-icon-search"></i></a>
-                    </li>
+                            <ul class="index-nav-items-more index-nav-items-more-hide">
+                                <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航1</a></li>
+                                <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航2</a></li>
+                                <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航3</a></li>
+                                <li class="index-nav-item-more"><a href="javascript:" title="更多下的子导航">子导航4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="index-nav-user">
+                        <!-- 未登录状态下显示 -->
+                        <li class="index-nav-user-info">
+                            <a href="javascript:" title="用户"><i class="layui-icon layui-icon-username"></i></a>
+                        </li>
+                        <li class="index-nav-user-search">
+                            <a href="javascript:" title="搜索"><i class="layui-icon layui-icon-search"></i></a>
+                        </li>
 
-                    <!-- 已经登录状态下显示 -->
+                        <!-- 已经登录状态下显示 -->
 
-                </ul>
+                    </ul>
 
-            </nav>
-        </div>
-    </header>
+                </nav>
+            </div>
+        </header>
 
-    <section>
-        <div class="index-count-down fillet">
-            <div class="index-count-down-content">
-                <span>项目从2019年1月15日至今已经过去</span>
-                <div>
-                    <span class="red"><p id="y2"></p><p>年</p></span>
-                    <span class="yg"><p id="d2"></p><p>天</p></span>
-                    <span class="or"><p id="h2"></p><p>时</p></span>
-                    <span class="pi"><p id="i2"></p><p>分</p></span>
-                    <span class="pk"><p id="s2"></p><p>秒</p></span>
+        <section>
+            <div class="index-count-down fillet">
+                <div class="index-count-down-content">
+                    <span>项目从2019年1月15日至今已经过去</span>
+                    <div>
+                        <span class="red"><p id="y2"></p><p>年</p></span>
+                        <span class="yg"><p id="d2"></p><p>天</p></span>
+                        <span class="or"><p id="h2"></p><p>时</p></span>
+                        <span class="pi"><p id="i2"></p><p>分</p></span>
+                        <span class="pk"><p id="s2"></p><p>秒</p></span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 这是主内 -->
-        <div class="index-content">
-            <div class="index-content-left fillet">
+            <!-- 这是主内 -->
+            <div class="index-content">
+                <router-view name="index">
+                    <!-- <div class="index-content-left fillet"></div>
+                    <div class="index-content-right fillet"></div> -->
+                </router-view>
+                <router-view name="personalDrip"></router-view>
+                <router-view name="curriculumVitae"></router-view>
+                <router-view name="friendshipLink"></router-view>
+                <router-view name="about"></router-view>
 
             </div>
-            <div class="index-content-right fillet">
-
-            </div>
-        </div>
-        <div class="index-friendLinks fillet">
-            <h4>友情链接：</h4>
-            <ul class="index-friendLinks-content">
-                <!-- 通过js生成并且添加 -->
-                <!-- <li>
+            <div class="index-friendLinks fillet">
+                <h4>友情链接：</h4>
+                <ul class="index-friendLinks-content">
+                    <!-- 通过js生成并且添加 -->
+                    <!-- <li>
                     <a href="javascript:" title="友情链接">
                         <img class="friendLinksAvatar circle" src="images/friendLinks/link_0001.gif" alt="">
                         <span>奇创云盟</span>
@@ -101,56 +120,58 @@
                         <span>提拉米苏的呆猫微博</span>
                     </a>
                 </li> -->
-            </ul>
-        </div>
-
-    </section>
-
-
-    <!-- 后期将把底部抽离 使用局部加载的方式动态加载 -->
-    <footer id="footer">
-        <!-- 这是底部 -->
-        <div class="foot">
-            <p>Copyright©2019提拉米苏的呆猫 All Right Reserved. Power By 大大二颜 桂ICP备17000465号-1</p>
-            <p>网站已勉强运行：0天 0小时 0分钟 0秒</p>
-            <p><a href="javascript:" title="">www.925i.cn</a></p>
-        </div>
-    </footer>
-
-
-    <!-- 背景图片 -->
-    <img class="index-bg" src="images/backgrouds/bg_001.png">
-
-    <!-- 看板娘 -->
-    <div id="landlord" style="left:5px;bottom:0px;">
-        <div class="message" style="opacity:0"></div>
-        <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
-        <div class="live_talk_input_body">
-            <div class="live_talk_input_name_body">
-                <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+                </ul>
             </div>
-            <div class="live_talk_input_text_body">
-                <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？" />
-                <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+
+        </section>
+
+
+        <!-- 后期将把底部抽离 使用局部加载的方式动态加载 -->
+        <footer id="footer">
+            <!-- 这是底部 -->
+            <div class="foot">
+                <p>Copyright©2019提拉米苏的呆猫 All Right Reserved. Power By 大大二颜 桂ICP备17000465号-1</p>
+                <p>网站已勉强运行：0天 0小时 0分钟 0秒</p>
+                <p><a href="javascript:" title="">www.925i.cn</a></p>
+            </div>
+        </footer>
+
+
+        <!-- 背景图片 -->
+        <img class="index-bg" src="images/backgrouds/bg_001.png">
+
+        <!-- 看板娘 -->
+        <div id="landlord" style="left:5px;bottom:0px;">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+            <div class="live_talk_input_body">
+                <div class="live_talk_input_name_body">
+                    <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+                </div>
+                <div class="live_talk_input_text_body">
+                    <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？" />
+                    <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+                </div>
+            </div>
+            <input name="live_talk" id="live_talk" value="1" type="hidden" />
+            <div class="live_ico_box">
+                <div class="live_ico_item type_info" id="showInfoBtn"></div>
+                <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+                <div class="live_ico_item type_music" id="musicButton"></div>
+                <!-- <div class="live_ico_item type_youdu" id="youduButton"></div> -->
+                <div class="live_ico_item type_quit" id="hideButton"></div>
+                <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+                <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+                <!-- <input name="live2dBGM" value="https://t1.aixinxi.net/o_1c52p4qbp15idv6bl55h381moha.mp3" type="hidden"> -->
+                <input name="live2dBGM" value="https://t1.aixinxi.net/o_1c52p8frrlmf1aled1e14m56una.mp3" type="hidden">
+                <input id="duType" value="douqilai,l2d_caihong" type="hidden">
             </div>
         </div>
-        <input name="live_talk" id="live_talk" value="1" type="hidden" />
-        <div class="live_ico_box">
-            <div class="live_ico_item type_info" id="showInfoBtn"></div>
-            <div class="live_ico_item type_talk" id="showTalkBtn"></div>
-            <div class="live_ico_item type_music" id="musicButton"></div>
-            <!-- <div class="live_ico_item type_youdu" id="youduButton"></div> -->
-            <div class="live_ico_item type_quit" id="hideButton"></div>
-            <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
-            <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
-            <input name="live2dBGM" value="https://t1.aixinxi.net/o_1c52p4qbp15idv6bl55h381moha.mp3" type="hidden">
-            <input name="live2dBGM" value="https://t1.aixinxi.net/o_1c52p8frrlmf1aled1e14m56una.mp3" type="hidden">
-            <input id="duType" value="douqilai,l2d_caihong" type="hidden">
-        </div>
+        <div id="open_live2d">召唤伊斯特瓦尔</div>
+
     </div>
-    <div id="open_live2d">召唤伊斯特瓦尔</div>
-
-
+    <script src="../lib/vue/vue.js"></script>
+    <script src="../lib/vue/vue-router.js"></script>
     <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="../lib/layui/layui.all.js"></script>
     <script src="js/mouseStyle.js"></script>

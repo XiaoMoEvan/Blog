@@ -4,6 +4,7 @@
 
 let _$moreThis = null;
 $(".index-nav-more").click(function() {
+    console.info("点击了");
     _$moreThis = $(this);
     let _$thisParent = _$moreThis.parent();
     let _$navItemMore = _$thisParent.find(".index-nav-items-more");
@@ -92,3 +93,84 @@ var fillZero = (num) => {
 }
 
 getIndexFriendLinks();
+
+
+
+
+/***使用Vue导航切换设置 */
+
+var routes = [{
+    name: 'index',
+    path: '/',
+    components: {
+        index: {
+            template: `
+            <div>
+                <div class="index-content-left fillet">
+                    这是用router-view加载的首页页面
+                </div>
+                <div class="index-content-right fillet">
+
+                </div> 
+            </div> 
+         `
+        }
+    }
+}, {
+    name: 'personalDrip',
+    path: '/personalDrip',
+    components: {
+        personalDrip: {
+            template: `
+                <div class="common-page" style="background:palevioletred;">
+                    这是用router-view加载的个人点滴页面               
+                </div>            
+            `
+        }
+    }
+}, {
+    name: 'curriculumVitae',
+    path: '/curriculumVitae',
+    components: {
+        curriculumVitae: {
+            template: `
+                <div class="common-page" style="background:orange;">
+                    这是用router-view加载的个人简历页面
+                </div>
+            `
+        }
+    }
+}, {
+    name: 'friendshipLink',
+    path: '/friendshipLink',
+    components: {
+        friendshipLink: {
+            template: `
+                <div class="common-page" style="background:yellowgreen;">
+                    这是用router-view加载的友情链接
+                </div>
+             `
+        }
+    }
+}, {
+    name: 'about',
+    path: '/about',
+    components: {
+        about: {
+            template: `
+                <div class="common-page" style="background:#00a0e9;">
+                    这是用router-view加载的关于本站内容                  
+                </div>
+            `
+        }
+    }
+}]
+
+const router = new VueRouter({
+    routes: routes,
+})
+
+var allianceApp = new Vue({
+    el: '#alliance-app',
+    router: router
+})
